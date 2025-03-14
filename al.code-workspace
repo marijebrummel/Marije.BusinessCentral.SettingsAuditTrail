@@ -7,5 +7,23 @@
       "path": ".AL-Go"
     }
   ],
-  "settings": {}
+  "settings": {},
+  "launch": {
+    "configurations": [
+      
+      {
+        "name": "Microsoft cloud sandbox",
+        "request": "launch",
+        "type": "al",
+        "environmentType": "Sandbox",
+        "environmentName": "sandbox",
+        "startupObjectId": 22,
+        "startupObjectType": "Page",
+        "breakOnError": "All",
+        "launchBrowser": true,
+        "enableLongRunningSqlStatements": true,
+        "enableSqlInformationDebugger": true
+      }
+    ]
+  }
 }
