@@ -2,6 +2,26 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Publish: Your own server",
+            "type": "al",
+            "request": "launch",
+            "environmentType": "OnPrem",
+            "server": "http://4PS-TST-BCU-01:8080/",
+            "serverInstance": "BCS240TestWindows-BCU",
+            "authentication": "Windows",
+            "startupObjectId": 92750,
+            "breakOnError": "All",
+            "breakOnRecordWrite": "None",
+            "schemaUpdateMode": "Synchronize",
+            "launchBrowser": true,
+            "enableSqlInformationDebugger": true,
+            "enableLongRunningSqlStatements": true,
+            "longRunningSqlStatementsThreshold": 500,
+            "numberOfSqlStatements": 10,
+            "tenant": "default",
+            "usePublicURLFromServer": true
+        },
+        {
             "name": "Microsoft cloud sandbox",
             "request": "launch",
             "type": "al",

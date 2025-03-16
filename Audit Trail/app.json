@@ -16,13 +16,17 @@
   "application": "22.0.0.0",
   "idRanges": [
     {
-      "from": 50000,
-      "to": 99999
+      "from": 92682, "to": 92682
+    },
+    {
+      "from": 92750,
+      "to": 92750
     }
   ],
   "features": [
     "NoImplicitWith"
   ],
+  "runtime": "13.1",
   "resourceExposurePolicy": {
     "allowDebugging": true,
     "allowDownloadingSource": false,

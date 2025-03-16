@@ -1,4 +1,4 @@
-page 60000 "PTE Audit Trail Entries"
+page 92750 "PTE Audit Trail Entries"
 {
     PageType = List;
     ApplicationArea = All;

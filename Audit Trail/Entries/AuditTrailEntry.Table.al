@@ -1,4 +1,4 @@
-table 60000 "PTE Audit Trail Entry"
+table 92750 "PTE Audit Trail Entry"
 {
     DataClassification = SystemMetadata;
 
@@ -26,9 +26,5 @@ table 60000 "PTE Audit Trail Entry"
 
     keys { key(Key1; "Entry No.") { Clustered = true; } }
 
-    trigger OnInsert()
-    begin
-        Message('Foo');
-    end;
 
 }
