@@ -2,7 +2,24 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Publish: Your own server",
+            "name": "LDR",
+            "type": "al",
+            "request": "launch",
+            "environmentType": "OnPrem",
+            "server": "http://172.18.21.97:8080/",
+            "serverInstance": "BCS240TestWindows-LDR",
+            "authentication": "Windows",
+            "startupObjectId": 92751,
+            "breakOnError": "All",
+            "breakOnRecordWrite": "None",
+            "enableSqlInformationDebugger": true,
+            "enableLongRunningSqlStatements": true,
+            "longRunningSqlStatementsThreshold": 500,
+            "numberOfSqlStatements": 10,
+            "tenant": "default"
+        },
+        {
+            "name": "Test",
             "type": "al",
             "request": "launch",
             "environmentType": "OnPrem",
