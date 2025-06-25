@@ -5,6 +5,8 @@ codeunit 92682 "PTE Audit Trail"
     var
         AuditTrail: Record "PTE Audit Trail Entry";
     begin
+        exit;
+
         if RecRef.Number = Database::"Change Log Setup (Table)" then // Do not audit the change log itsself
             exit;
 
