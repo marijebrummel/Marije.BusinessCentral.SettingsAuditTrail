@@ -52,13 +52,19 @@ page 92751 "PTE Changed Records"
     local procedure CalculateChangedRecords()
     var
         AllObj: Record AllObj;
+        RecordCounter: List of [Integer];
     begin
         Rec.DeleteAll();
         AllObj.SetRange("Object Type", Rec."Object Type"::Table);
+        AllObj.SetRange("Object ID", 1, 100);
         AllObj.FindSet();
         repeat
             Rec := AllObj;
             Rec.Insert();
+            RecordCounter.Add(RecordsCreated(RecordsCreated(Rec."Object ID")));
+            RecordCounter.Add(RecordsModified(RecordsCreated(Rec."Object ID")));
+            RecordCounters.Add(Rec."Object ID", RecordCounter);
+
         until AllObj.Next() = 0;
     end;
 
@@ -72,14 +78,24 @@ page 92751 "PTE Changed Records"
         exit(RecordCounters.Get(Rec."Object ID").Get(2));
     end;
 
-    local procedure RecordsCreated(): Integer
+    local procedure RecordsCreated(ObjId: Integer): Integer
     var
         RecRef: RecordRef;
     begin
-        RecRef.Open(Rec."Object ID");
+        RecRef.Open(ObjId);
         RecRef.Field(2000000001).SetRange(FromDateTime, CurrentDateTime);
         exit(RecRef.Count);
     end;
+
+    local procedure RecordsModified(ObjId: Integer): Integer
+    var
+        RecRef: RecordRef;
+    begin
+        RecRef.Open(ObjId);
+        RecRef.Field(2000000003).SetRange(FromDateTime, CurrentDateTime);
+        exit(RecRef.Count);
+    end;
+
 
     var
         RecordCounters: Dictionary of [Integer, List of [Integer]];
